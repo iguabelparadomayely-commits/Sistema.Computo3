@@ -67,5 +67,21 @@ Public Class DCategoria
             Throw ex
         End Try
     End Sub
+    Public Sub Actulizar(Obj As Categoria)
+        Try
 
+            Dim Comando As New SqlCommand("categoria_actualizar", MyBase.conn)
+            Comando.CommandType = CommandType.StoredProcedure
+            Comando.Parameters.Add("@idcategoria", SqlDbType.Int).Value = Obj.Idcategoria
+            Comando.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Obj.Nombre
+            Comando.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = Obj.Descripcion
+
+            MyBase.conn.Open()
+            Comando.ExecuteNonQuery()
+            MyBase.conn.Close()
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 End Class

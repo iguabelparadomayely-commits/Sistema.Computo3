@@ -38,4 +38,16 @@ Public Class NCategoria
 
         End Try
     End Function
+    Public Function Actualizar(Obj As Categoria) As Boolean
+        Try
+            Dim Datos As New DCategoria
+            Datos.Actulizar(Obj)
+            Return True
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+
+        End Try
+    End Function
 End Class

@@ -96,6 +96,24 @@ Public Class FrmCategoria
     End Sub
 
     Private Sub btnActualizar_Click_1(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        If Me.ValidateChildren = True And TxtNombre.Text <> "" And TxtId.Text <> "" Then
+            Dim Obj As New Entidad.Categoria
+            Dim neg As New Negocio.NCategoria
 
+
+            Obj.Idcategoria = TxtId.Text
+            Obj.Nombre = TxtNombre.Text
+            Obj.Descripcion = TxtDescripcion.Text
+
+            If (neg.Actualizar(Obj)) Then
+                MsgBox("Se ha actualizado correctamente", vbOKOnly + vbInformation, "Actualización correcta")
+                Me.Listar()
+                TabGeneral.SelectedIndex = 0
+            Else
+                MsgBox("No se ha podido actualizar correctamente", vbOKOnly + vbCritical, "Actualizacion Incorrecta")
+            End If
+        Else
+            MsgBox("Ingrese todos los datos requeridos(*)", MsgBoxStyle.OkOnly + vbCritical, "falta ingresar datos")
+        End If
     End Sub
 End Class
