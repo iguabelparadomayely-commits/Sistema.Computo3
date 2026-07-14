@@ -22,8 +22,8 @@ Public Class FrmCategoria
       DgvListado.DataSource = Tabla
       LblTotal.Text = "Total Registros: " & Tabla.Rows.Count
       Me.Formato()
-
-    Catch ex As Exception
+            Me.Limpiar()
+        Catch ex As Exception
       MsgBox(ex.Message)
     End Try
 
@@ -70,24 +70,32 @@ Public Class FrmCategoria
         Else
             MsgBox("Ingrese todos los datos requeridos(*)", MsgBoxStyle.OkOnly + vbCritical, "falta ingresar datos")
         End If
-
+    End Sub
+    Private Sub Limpiar()
+        btnActualizar.Visible = False
+        TxtValor.Clear()
+        TxtId.Clear()
+        TxtNombre.Clear()
+        TxtDescripcion.Clear()
+    End Sub
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+        Me.Limpiar()
+        TabGeneral.SelectedIndex = 0
     End Sub
 
-  Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
 
-  End Sub
+    Private Sub DgvListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListado.CellDoubleClick
 
+        TxtId.Text = DgvListado.SelectedCells.Item(1).Value
+        TxtNombre.Text = DgvListado.SelectedCells.Item(2).Value
+        TxtDescripcion.Text = DgvListado.SelectedCells.Item(3).Value
 
+        TabGeneral.SelectedIndex = 1
+        BtnInsertar.Visible = False
+        btnActualizar.Visible = True
+    End Sub
 
-  Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
+    Private Sub btnActualizar_Click_1(sender As Object, e As EventArgs) Handles btnActualizar.Click
 
-  End Sub
-
-  Private Sub DgvListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvListado.CellDoubleClick
-
-  End Sub
-
-  Private Sub BtnActualizar_Click(sender As Object, e As EventArgs)
-
-  End Sub
+    End Sub
 End Class

@@ -61,5 +61,7 @@ Public Class DRol
             Throw ex
         End Try
     End Sub
+    Public Function Actualizar()
 
+    End Function
 End Class

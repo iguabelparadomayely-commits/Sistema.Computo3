@@ -30,7 +30,7 @@ Partial Class FrmCategoria
         Me.LblTotal = New System.Windows.Forms.Label()
         Me.DgvListado = New System.Windows.Forms.DataGridView()
         Me.Seleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.SelectIndex = New System.Windows.Forms.TabPage()
         Me.TxtId = New System.Windows.Forms.TextBox()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnInsertar = New System.Windows.Forms.Button()
@@ -43,15 +43,15 @@ Partial Class FrmCategoria
         Me.TabGeneral.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage2.SuspendLayout()
+        Me.SelectIndex.SuspendLayout()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabGeneral
         '
         Me.TabGeneral.Controls.Add(Me.TabPage1)
-        Me.TabGeneral.Controls.Add(Me.TabPage2)
-        Me.TabGeneral.Location = New System.Drawing.Point(9, 10)
+        Me.TabGeneral.Controls.Add(Me.SelectIndex)
+        Me.TabGeneral.Location = New System.Drawing.Point(7, 11)
         Me.TabGeneral.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabGeneral.Name = "TabGeneral"
         Me.TabGeneral.SelectedIndex = 0
@@ -127,24 +127,24 @@ Partial Class FrmCategoria
         Me.Seleccionar.ReadOnly = True
         Me.Seleccionar.Width = 125
         '
-        'TabPage2
+        'SelectIndex
         '
-        Me.TabPage2.Controls.Add(Me.btnActualizar)
-        Me.TabPage2.Controls.Add(Me.TxtId)
-        Me.TabPage2.Controls.Add(Me.BtnCancelar)
-        Me.TabPage2.Controls.Add(Me.BtnInsertar)
-        Me.TabPage2.Controls.Add(Me.TxtDescripcion)
-        Me.TabPage2.Controls.Add(Me.TxtNombre)
-        Me.TabPage2.Controls.Add(Me.Label2)
-        Me.TabPage2.Controls.Add(Me.Label1)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.TabPage2.Size = New System.Drawing.Size(740, 431)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Mantenimiento"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.SelectIndex.Controls.Add(Me.btnActualizar)
+        Me.SelectIndex.Controls.Add(Me.TxtId)
+        Me.SelectIndex.Controls.Add(Me.BtnCancelar)
+        Me.SelectIndex.Controls.Add(Me.BtnInsertar)
+        Me.SelectIndex.Controls.Add(Me.TxtDescripcion)
+        Me.SelectIndex.Controls.Add(Me.TxtNombre)
+        Me.SelectIndex.Controls.Add(Me.Label2)
+        Me.SelectIndex.Controls.Add(Me.Label1)
+        Me.SelectIndex.Location = New System.Drawing.Point(4, 22)
+        Me.SelectIndex.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.SelectIndex.Name = "SelectIndex"
+        Me.SelectIndex.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.SelectIndex.Size = New System.Drawing.Size(740, 431)
+        Me.SelectIndex.TabIndex = 1
+        Me.SelectIndex.Text = "Mantenimiento"
+        Me.SelectIndex.UseVisualStyleBackColor = True
         '
         'TxtId
         '
@@ -246,8 +246,8 @@ Partial Class FrmCategoria
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         CType(Me.DgvListado, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
+        Me.SelectIndex.ResumeLayout(False)
+        Me.SelectIndex.PerformLayout()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -257,7 +257,7 @@ Partial Class FrmCategoria
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents DgvListado As DataGridView
     Friend WithEvents Seleccionar As DataGridViewCheckBoxColumn
-    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents SelectIndex As TabPage
     Friend WithEvents LblTotal As Label
     Friend WithEvents BtnBuscar As Button
     Friend WithEvents TxtValor As TextBox
